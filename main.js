@@ -20,7 +20,7 @@ fetch(`https://openlibrary.org/search.json?q=${value}`)
             const total_reult = document.getElementById('total_reult');
             total_reult.innerText = numfound;
 
-            if(total_reult.innerText === '0' || total_reult.innerText === '') {
+            if(total_reult.innerText === '0') {
                 const no_result = document.getElementById('no_result');
                 no_result.innerText = 'No Result Found'
                 search_result.textContent ='';
@@ -29,16 +29,14 @@ fetch(`https://openlibrary.org/search.json?q=${value}`)
               no_result.innerText = '';
               const search_result = document.getElementById('search_result');
               search_result.textContent ='';
+
               
-      
               bookData.forEach(dataBook => {
-  
-             const bookName = dataBook.title
-             const authorName = dataBook.author_name
-             const publisherName = dataBook.publisher
-             const publishYear = dataBook.publish_year
-             dataBook.publish_year? dataBook.publish_year: "Not Available"
-  
+             const bookName = dataBook.title;
+             const authorName = dataBook.author_name;
+             const publisherName = dataBook.publisher;
+             const publishYear = dataBook.publish_year;
+
              const div = document.createElement('div');
              div.classList.add('col');
              const imageurl = `https://covers.openlibrary.org/b/id/${dataBook.cover_i}-M.jpg`
