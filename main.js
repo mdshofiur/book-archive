@@ -29,7 +29,7 @@ fetch(`https://openlibrary.org/search.json?q=${value}`)
               no_result.innerText = '';
               const search_result = document.getElementById('search_result');
               search_result.textContent ='';
-              //data.docs[0].author_name[0]
+              
       
               bookData.forEach(dataBook => {
   
