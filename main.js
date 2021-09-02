@@ -20,10 +20,11 @@ fetch(`https://openlibrary.org/search.json?q=${value}`)
             const total_reult = document.getElementById('total_reult');
             total_reult.innerText = numfound;
 
-            if(total_reult.innerText === '0') {
+            if(total_reult.innerText === '0' || total_reult.innerText === '') {
                 const no_result = document.getElementById('no_result');
                 no_result.innerText = 'No Result Found'
-                
+                search_result.textContent ='';
+
             } else {
               no_result.innerText = '';
               const search_result = document.getElementById('search_result');
